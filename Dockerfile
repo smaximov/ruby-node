@@ -1,4 +1,4 @@
-FROM ruby:latest
+FROM ruby:2.3.3
 MAINTAINER smaximov <s.b.maximov@gmail.com>
 
 RUN apt-get update -qq && apt-get install -y -qq \
