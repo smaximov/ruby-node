@@ -37,4 +37,5 @@ RUN cd /tmp && \
      ./configure && \
      make && \
      make check && \
+     make install && \
      rm -rf /tmp/libsodium-*
