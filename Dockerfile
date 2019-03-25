@@ -9,7 +9,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 
 # Install dependencies
 RUN apt-get update -qq && apt-get install -y -qq \
-      google-chrome-stable \
+      google-chrome-unstable \
       gstreamer1.0-plugins-base \
       gstreamer1.0-tools \
       gstreamer1.0-x \
@@ -19,7 +19,7 @@ RUN apt-get update -qq && apt-get install -y -qq \
       xvfb
 
 # Install chromedriver
-RUN export CHROMEDRIVER_RELEASE=$(curl --location --fail --retry 3 http://chromedriver.storage.googleapis.com/LATEST_RELEASE_73) && \
+RUN export CHROMEDRIVER_RELEASE=$(curl --location --fail --retry 3 http://chromedriver.storage.googleapis.com/LATEST_RELEASE_74) && \
      curl --silent --show-error --location --fail --retry 3 --output /tmp/chromedriver_linux64.zip "http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_RELEASE/chromedriver_linux64.zip" && \
      cd /tmp && \
      unzip chromedriver_linux64.zip && \
